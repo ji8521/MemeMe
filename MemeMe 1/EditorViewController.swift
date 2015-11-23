@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  MemeMe 1
+//  MemeMe
 //
 //  Created by Jeffrey Isaray on 11/17/15.
 //  Copyright © 2015 Jeffrey Isaray. All rights reserved.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate {
+class EditorViewController: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate {
 
    
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    @IBOutlet weak var navigationBar: UINavigationItem!
+    @IBOutlet weak var navigationBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -100,39 +100,49 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITextFi
             activity, success, items, error in
             if success {
                 self.saveMeme()
+                self.showSentMeme()
             }
         }
     }
     
     @IBAction func cancelShare(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+        showSentMeme()
     }
     
+    // Create a meme object and add it to the memes array
     func saveMeme() {
-        // Create meme
-        _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: generateMemedImage())
+        // Update the meme
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: generateMemedImage())
+        
+        // Add it to the memes array on the Application Delegate
+        (UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
     }
     
+    func showSentMeme() {
+        let tabBarViewController = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarController") as! UITabBarController
+        self.presentViewController(tabBarViewController, animated: true, completion: nil)
+    }
+    
+    // Create a UIImage that combines the Image View and the Labels
     func generateMemedImage() -> UIImage {
         
         // Hide navigation bar and toolbar
-        hide(true, animated: false)
+        toolbar.hidden = true
+        navigationBar.hidden = true
         
-        //Generate Meme
+        // Render view to an image
         UIGraphicsBeginImageContext(view.frame.size)
         view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         // Show navigation bar and toolbar
-        hide(false, animated: false)
+        toolbar.hidden = false
+        navigationBar.hidden = false
+        
         
         return memedImage
-    }
-    
-    func hide(flag: Bool, animated: Bool) {
-        navigationController?.setNavigationBarHidden(flag, animated: animated)
-        navigationController?.setToolbarHidden(flag, animated: animated)
     }
     
     func subscribeToKeyboardNotifications() {
@@ -173,6 +183,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITextFi
     }
     
     func keyboardWillHide(notification: NSNotification) {
+        view.frame.origin.y += getKeyboardHeight(notification)
         currentKeyboardHeight = 0
         view.frame.origin.y = 0
     }

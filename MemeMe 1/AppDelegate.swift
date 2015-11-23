@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  MemeMe 1
+//  MemeMe
 //
 //  Created by Jeffrey Isaray on 11/17/15.
 //  Copyright © 2015 Jeffrey Isaray. All rights reserved.
@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var memes = [Meme]()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

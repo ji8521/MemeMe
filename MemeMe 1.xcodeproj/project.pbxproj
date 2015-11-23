@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		973178421BFBEB2A007EE4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973178411BFBEB2A007EE4CA /* AppDelegate.swift */; };
-		973178441BFBEB2A007EE4CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973178431BFBEB2A007EE4CA /* ViewController.swift */; };
+		973178441BFBEB2A007EE4CA /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973178431BFBEB2A007EE4CA /* EditorViewController.swift */; };
 		973178471BFBEB2A007EE4CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 973178451BFBEB2A007EE4CA /* Main.storyboard */; };
 		973178491BFBEB2A007EE4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 973178481BFBEB2A007EE4CA /* Assets.xcassets */; };
 		9731784C1BFBEB2A007EE4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9731784A1BFBEB2A007EE4CA /* LaunchScreen.storyboard */; };
 		973178541BFC025D007EE4CA /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973178531BFC025D007EE4CA /* Meme.swift */; };
+		97BAEDA11BFC1DD0009F8BE4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAEDA01BFC1DD0009F8BE4 /* DetailViewController.swift */; };
+		97BAEDA31BFC1DE8009F8BE4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAEDA21BFC1DE8009F8BE4 /* TableViewController.swift */; };
+		97BAEDA71BFC1E11009F8BE4 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAEDA61BFC1E11009F8BE4 /* CollectionViewController.swift */; };
+		97BAEDA91BFC1E20009F8BE4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAEDA81BFC1E20009F8BE4 /* CollectionViewCell.swift */; };
+		97BAEDAE1C00E112009F8BE4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAEDAD1C00E112009F8BE4 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9731783E1BFBEB2A007EE4CA /* MemeMe 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MemeMe 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		973178411BFBEB2A007EE4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		973178431BFBEB2A007EE4CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		973178431BFBEB2A007EE4CA /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		973178461BFBEB2A007EE4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		973178481BFBEB2A007EE4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9731784B1BFBEB2A007EE4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9731784D1BFBEB2A007EE4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		973178531BFC025D007EE4CA /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		97BAEDA01BFC1DD0009F8BE4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		97BAEDA21BFC1DE8009F8BE4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
+		97BAEDA61BFC1E11009F8BE4 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		97BAEDA81BFC1E20009F8BE4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		97BAEDAD1C00E112009F8BE4 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +67,13 @@
 			isa = PBXGroup;
 			children = (
 				973178411BFBEB2A007EE4CA /* AppDelegate.swift */,
-				973178431BFBEB2A007EE4CA /* ViewController.swift */,
 				973178531BFC025D007EE4CA /* Meme.swift */,
+				973178431BFBEB2A007EE4CA /* EditorViewController.swift */,
+				97BAEDA21BFC1DE8009F8BE4 /* TableViewController.swift */,
+				97BAEDAD1C00E112009F8BE4 /* TableViewCell.swift */,
+				97BAEDA61BFC1E11009F8BE4 /* CollectionViewController.swift */,
+				97BAEDA81BFC1E20009F8BE4 /* CollectionViewCell.swift */,
+				97BAEDA01BFC1DD0009F8BE4 /* DetailViewController.swift */,
 				973178451BFBEB2A007EE4CA /* Main.storyboard */,
 				973178481BFBEB2A007EE4CA /* Assets.xcassets */,
 				9731784A1BFBEB2A007EE4CA /* LaunchScreen.storyboard */,
@@ -140,8 +155,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				973178541BFC025D007EE4CA /* Meme.swift in Sources */,
-				973178441BFBEB2A007EE4CA /* ViewController.swift in Sources */,
+				97BAEDAE1C00E112009F8BE4 /* TableViewCell.swift in Sources */,
+				973178441BFBEB2A007EE4CA /* EditorViewController.swift in Sources */,
+				97BAEDA91BFC1E20009F8BE4 /* CollectionViewCell.swift in Sources */,
 				973178421BFBEB2A007EE4CA /* AppDelegate.swift in Sources */,
+				97BAEDA71BFC1E11009F8BE4 /* CollectionViewController.swift in Sources */,
+				97BAEDA31BFC1DE8009F8BE4 /* TableViewController.swift in Sources */,
+				97BAEDA11BFC1DD0009F8BE4 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +313,7 @@
 				973178521BFBEB2A007EE4CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
