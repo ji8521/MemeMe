@@ -59,14 +59,10 @@ class EditorViewController: UIViewController, UINavigationControllerDelegate, UI
     
     func memeTextFieldAttributes(textfield: UITextField) {
         
-        topTextField.backgroundColor = UIColor.clearColor()
-        bottomTextField.backgroundColor = UIColor.clearColor()
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = .Center
-        bottomTextField.textAlignment = .Center
-        topTextField.delegate = self
-        bottomTextField.delegate = self
+        textfield.backgroundColor = UIColor.clearColor()
+        textfield.defaultTextAttributes = memeTextAttributes
+        textfield.textAlignment = .Center
+        textfield.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
