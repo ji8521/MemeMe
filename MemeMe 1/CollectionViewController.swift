@@ -12,9 +12,7 @@ private let reuseIdentifier = "sentMemeCell"
 
 class CollectionViewController: UICollectionViewController {
     
-    var memes: [Meme] {
-        return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
-    }
+    var memes: [Meme]!
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
@@ -27,8 +25,8 @@ class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         let space: CGFloat = 3.0
-        let widthDimension = (self.view.frame.size.width - (2 * space)) / 4.0
-        let heightDimension = (self.view.frame.size.width - (2 * space)) / 4.0
+        let widthDimension = (view.frame.size.width - (2 * space)) / 4.0
+        let heightDimension = (view.frame.size.width - (2 * space)) / 4.0
         
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
@@ -37,6 +35,8 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        let applicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        memes = applicationDelegate.memes
         collectionView?.reloadData()
     }
 
@@ -69,7 +69,7 @@ class CollectionViewController: UICollectionViewController {
         let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
         detailViewController.selectedMeme = selectedMeme
     
-        self.navigationController!.pushViewController(detailViewController, animated: true)
+        navigationController!.pushViewController(detailViewController, animated: true)
     }
 
 }

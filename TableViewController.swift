@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     var memes: [Meme]!
     
     @IBAction func addButton(sender: AnyObject) {
-        let editorViewController: EditorViewController = self.storyboard?.instantiateViewControllerWithIdentifier("editorViewController") as! EditorViewController
+        let editorViewController: EditorViewController = storyboard?.instantiateViewControllerWithIdentifier("editorViewController") as! EditorViewController
         presentViewController(editorViewController, animated: true, completion: nil)
     }
     
@@ -58,7 +58,7 @@ class TableViewController: UITableViewController {
         let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
         detailViewController.selectedMeme = selectedMeme
         
-        self.navigationController!.pushViewController(detailViewController, animated: true)
+        navigationController!.pushViewController(detailViewController, animated: true)
         
     }
     

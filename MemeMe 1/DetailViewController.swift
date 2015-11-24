@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
     var selectedMeme: Meme!
+    var edit: UIBarButtonItem!
     var delete: UIBarButtonItem!
     
     @IBOutlet weak var imageView: UIImageView!
@@ -19,18 +20,25 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         if let image = selectedMeme.memedImage {
             imageView.image = image
+            edit = UIBarButtonItem(title: "Edit", style: .Done, target: self, action: "editMeme")
             delete = UIBarButtonItem(title: "Delete", style: .Done, target: self, action: "deleteMeme")
             
-             self.navigationItem.rightBarButtonItems = [delete]
+            navigationItem.rightBarButtonItems = [edit, delete]
+            imageView.image = selectedMeme.memedImage
+            
         }
     }
     
     func deleteMeme() {
         let applicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         applicationDelegate.memes.removeLast()
-        
-        self.navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewControllerAnimated(true)
         
     }
     
+    func editMeme() {
+        let editorViewController = storyboard!.instantiateViewControllerWithIdentifier("editorViewController") as! EditorViewController
+        editorViewController.meme = selectedMeme
+        presentViewController(editorViewController, animated: true, completion: nil)
+    }
 }

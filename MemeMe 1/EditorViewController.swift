@@ -9,6 +9,8 @@
 import UIKit
 
 class EditorViewController: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate {
+    
+    var meme: Meme?
 
    
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -34,17 +36,26 @@ class EditorViewController: UIViewController, UINavigationControllerDelegate, UI
         NSStrokeWidthAttributeName: -3
     ]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
-        shareButton.enabled = false
-        memeTextFieldAttributes(topTextField)
-        memeTextFieldAttributes(bottomTextField)
-
+        if let existingMeme = meme {
+            topTextField.text = meme?.topText
+            bottomTextField.text = meme?.bottomText
+            memeTextFieldAttributes(topTextField)
+            memeTextFieldAttributes(bottomTextField)
+            imagePickerView.image = existingMeme.image
+            shareButton.enabled = true
+            
+        } else {
+            
+            topTextField.text = "TOP"
+            bottomTextField.text = "BOTTOM"
+            shareButton.enabled = false
+            memeTextFieldAttributes(topTextField)
+            memeTextFieldAttributes(bottomTextField)
     }
+}
     
     func memeTextFieldAttributes(textfield: UITextField) {
         
@@ -100,14 +111,13 @@ class EditorViewController: UIViewController, UINavigationControllerDelegate, UI
             activity, success, items, error in
             if success {
                 self.saveMeme()
-                self.showSentMeme()
+                self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
     }
     
     @IBAction func cancelShare(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
-        showSentMeme()
     }
     
     // Create a meme object and add it to the memes array
@@ -117,10 +127,6 @@ class EditorViewController: UIViewController, UINavigationControllerDelegate, UI
         
         // Add it to the memes array on the Application Delegate
         (UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
-    }
-    
-    func showSentMeme() {
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // Create a UIImage that combines the Image View and the Labels
@@ -156,7 +162,7 @@ class EditorViewController: UIViewController, UINavigationControllerDelegate, UI
     
     // Clear text field when user taps
     func textFieldDidBeginEditing(textField: UITextField) {
-        if textField.text == "TOP" || bottomTextField.text == "BOTTOM" {
+        if textField.text == "TOP" || textField.text == "BOTTOM" {
             textField.text = ""
         }
     }
