@@ -12,7 +12,6 @@ class EditorViewController: UIViewController, UINavigationControllerDelegate, UI
     
     var meme: Meme?
 
-   
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!

@@ -17,7 +17,6 @@
 		97BAEDA31BFC1DE8009F8BE4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAEDA21BFC1DE8009F8BE4 /* TableViewController.swift */; };
 		97BAEDA71BFC1E11009F8BE4 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAEDA61BFC1E11009F8BE4 /* CollectionViewController.swift */; };
 		97BAEDA91BFC1E20009F8BE4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAEDA81BFC1E20009F8BE4 /* CollectionViewCell.swift */; };
-		97BAEDAE1C00E112009F8BE4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAEDAD1C00E112009F8BE4 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		97BAEDA21BFC1DE8009F8BE4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
 		97BAEDA61BFC1E11009F8BE4 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		97BAEDA81BFC1E20009F8BE4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		97BAEDAD1C00E112009F8BE4 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +68,6 @@
 				973178531BFC025D007EE4CA /* Meme.swift */,
 				973178431BFBEB2A007EE4CA /* EditorViewController.swift */,
 				97BAEDA21BFC1DE8009F8BE4 /* TableViewController.swift */,
-				97BAEDAD1C00E112009F8BE4 /* TableViewCell.swift */,
 				97BAEDA61BFC1E11009F8BE4 /* CollectionViewController.swift */,
 				97BAEDA81BFC1E20009F8BE4 /* CollectionViewCell.swift */,
 				97BAEDA01BFC1DD0009F8BE4 /* DetailViewController.swift */,
@@ -155,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				973178541BFC025D007EE4CA /* Meme.swift in Sources */,
-				97BAEDAE1C00E112009F8BE4 /* TableViewCell.swift in Sources */,
 				973178441BFBEB2A007EE4CA /* EditorViewController.swift in Sources */,
 				97BAEDA91BFC1E20009F8BE4 /* CollectionViewCell.swift in Sources */,
 				973178421BFBEB2A007EE4CA /* AppDelegate.swift in Sources */,
