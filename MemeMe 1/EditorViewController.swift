@@ -120,8 +120,7 @@ class EditorViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     func showSentMeme() {
-        let tabBarViewController = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarController") as! UITabBarController
-        self.presentViewController(tabBarViewController, animated: true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // Create a UIImage that combines the Image View and the Labels

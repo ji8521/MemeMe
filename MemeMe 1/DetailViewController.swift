@@ -24,8 +24,8 @@ class DetailViewController: UIViewController {
              self.navigationItem.rightBarButtonItems = [delete]
         }
     }
-
-    func deleteMeme(){
+    
+    func deleteMeme() {
         let applicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         applicationDelegate.memes.removeLast()
         
@@ -33,10 +33,4 @@ class DetailViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
 }

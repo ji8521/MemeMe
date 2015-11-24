@@ -10,23 +10,21 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-   
+    var memes: [Meme]!
+    
     @IBAction func addButton(sender: AnyObject) {
         let editorViewController: EditorViewController = self.storyboard?.instantiateViewControllerWithIdentifier("editorViewController") as! EditorViewController
         presentViewController(editorViewController, animated: true, completion: nil)
     }
-    
-    var memes: [Meme] {
-       return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.tableView.reloadData()
+        let applicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        memes = applicationDelegate.memes
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +60,15 @@ class TableViewController: UITableViewController {
         
         self.navigationController!.pushViewController(detailViewController, animated: true)
         
+    }
+    
+    // Delete meme
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        let applicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        memes.removeAtIndex(indexPath.row)
+            
+        applicationDelegate.memes = memes
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 
 }

@@ -37,7 +37,7 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.collectionView?.reloadData()
+        collectionView?.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
